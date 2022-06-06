@@ -1,12 +1,12 @@
-var tasks = {};
+var events = {};
 
 
-var loadTasks = function () {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
+var loadEvents = function () {
+    events = JSON.parse(localStorage.getItem("events"));
 
     // IF NOTHING IN LOCALSTORAGE, CREATE NEW ARRAY FOR HOURLY EVENTS
-    if (!tasks) {
-        tasks = {
+    if (!events) {
+        events = {
             eightAM: [],
             nineAM: [],
             tenAM: [],
@@ -20,20 +20,22 @@ var loadTasks = function () {
         };
     };
 
-    $.each(tasks, function(list, arr) {
-        arr.forEach(function(task) {
-            createTask
-        });
+    // POPULATE EACH HOUR'S EVENT BOX WITH PREVIOUSLY SAVED EVENTS
+    $.each(events, function(index, value) {
+        
     });
 };
 
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+var saveEvents = function() {
+    localStorage.setItem("events", JSON.stringify(events));
   };
 
 var chkTime = function() {
-    var currentTime = moment();
-    console.log(currentTime);
+    var currentTime = moment().hour();
+    var startTime = 8;
+    var timeDifference = currentTime - startTime;
+    var eventTime = events[i];
+    console.log(timeDifference);
 }
 
 // TIME BLOCK WAS CLICKED, BEGIN EDITING TEXT
@@ -42,7 +44,7 @@ $(".time-block").on("click", function() {
     var text = $(this)
         .text()
         .trim();
-    console.log(text);
+    
 
     // CHANGE TO TEXTAREA TO EDIT TEXT
     var textInput = $("<textarea>").val(text);
@@ -51,15 +53,13 @@ $(".time-block").on("click", function() {
 });
 
 // CLICKED OUT OF EDITING TIME BLOCK
-$(".time-block").on("blur", "textarea", function() {
+/*$(".time-block").on("blur", "textarea", function() {
     // get current value of textarea
     var text = $(this).val();
   
     // get status type and position in the list
     var eventHour = $(this)
-      .closest(".time-block")
-      .attr("id")
-      .replace("list-", "");
+      .closest(".time-block");
     var index = $(this)
       .index();
   
@@ -67,27 +67,34 @@ $(".time-block").on("blur", "textarea", function() {
     tasks[eventHour][index].text = text;
     saveTasks();
   
-    // recreate p element
+    // recreate section element
     var taskSection = $("<section>")
       .addClass("m-1")
       .text(text);
   
     // replace textarea with new content
     $(this).replaceWith(taskSection);
-  });
-
-  /*$(".saveBtn").click(function() {
-    var eventText = 
   }); */
+
+  // CLICKED A SAVE BUTTON, SAVE EVENT FOR THAT HOUR
+$(".saveBtn").click(function(event) {
+    var eventInput = $(event.target).siblings("textarea");
+    var eventText = $(event.target).siblings("textarea").val();
+    var eventBox = $("<section>").addClass("time-block col-10 p-2").append(eventText);
+    $(eventInput).replaceWith(eventBox);
+
+    console.log(eventBox);
+    saveEvents();
+});
 
 
   // LOAD TASKS FOR THE FIRST TIME
-  loadTasks();
+  loadEvents();
 
   
   // UPDATE EVENT BLOCK COLORS EVERY 10 MINUTES
-  setInterval(function() {
+  /* setInterval(function() {
     $(".row .time-block").each(function() {
       chkTime($(this));
     });
-  }, 600000);
+  }, 300000); */
