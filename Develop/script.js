@@ -34,9 +34,18 @@ var chkTime = function() {
     var currentTime = moment().hour();
     var startTime = 8;
     var timeDifference = currentTime - startTime;
-    var eventTime = events[i];
+    var eventTime = events[index].val();
     console.log(timeDifference);
-}
+    $.each(events[index], function(eventColor) {
+        if (timeDifference > eventTime) {
+            $(eventColor).siblings("section").addClass("past");
+        } else if (timeDifference === eventTime) {
+            $(eventColor).siblings("section").addClass("present");
+        } else if (timeDifference < eventTime) {
+            $(eventColor).siblings("section").addClass("future");
+        };
+    });
+};
 
 // TIME BLOCK WAS CLICKED, BEGIN EDITING TEXT
 $(".time-block").on("click", function() {
@@ -93,8 +102,8 @@ $(".saveBtn").click(function(event) {
 
   
   // UPDATE EVENT BLOCK COLORS EVERY 10 MINUTES
-  /* setInterval(function() {
+  setInterval(function() {
     $(".row .time-block").each(function() {
       chkTime($(this));
     });
-  }, 300000); */
+  }, 5000);
