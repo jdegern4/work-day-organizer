@@ -1,91 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./Develop/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <!-- HEADER -->
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    
-    <!-- CONTAINER FOR DAY'S SCHEDULE -->
-    <div class="container px-2 mb-4">
-      <div id="8am" class="row">
-        <div class="hour col-1 text-center">8 am</div>
-        <section id="8amTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="9am" class="row">
-        <div class="hour col-1 text-center">9 am</div>
-        <section id="9amTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="10am" class="row">
-        <div class="hour col-1 text-center">10 am</div>
-        <section id="10amTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="11am" class="row">
-        <div class="hour col-1 text-center">11 am</div>
-        <section id="11amTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="12pm" class="row">
-        <div class="hour col-1 text-center">12 pm</div>
-        <section id="12pmTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="1pm" class="row">
-        <div class="hour col-1 text-center">1 pm</div>
-        <section id="1pmTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="2pm" class="row">
-        <div class="hour col-1 text-center">2 pm</div>
-        <section id="2pmTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="3pm" class="row">
-        <div class="hour col-1 text-center">3 pm</div>
-        <section id="3pmTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="4pm" class="row">
-        <div class="hour col-1 text-center">4 pm</div>
-        <section id="4pmTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
-      <div id="5pm" class="row">
-        <div class="hour col-1 text-center">5 pm</div>
-        <section id="5pmTasks" class="time-block col-10 p-2"></section>
-        <button class="saveBtn col-1">Save</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Develop/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+
+  <!-- CONTAINER FOR DAY'S SCHEDULE -->
+  <div class="container px-2 mb-4">
+    <div id="8" class="row">
+      <div class="hour col-1 text-center">8 am</div>
+      <section id="8amTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
     </div>
+    <div id="9" class="row">
+      <div class="hour col-1 text-center">9 am</div>
+      <section id="9amTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="10" class="row">
+      <div class="hour col-1 text-center">10 am</div>
+      <section id="10amTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="11" class="row">
+      <div class="hour col-1 text-center">11 am</div>
+      <section id="11amTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="12" class="row">
+      <div class="hour col-1 text-center">12 pm</div>
+      <section id="12pmTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="13" class="row">
+      <div class="hour col-1 text-center">1 pm</div>
+      <section id="1pmTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="14" class="row">
+      <div class="hour col-1 text-center">2 pm</div>
+      <section id="2pmTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="15" class="row">
+      <div class="hour col-1 text-center">3 pm</div>
+      <section id="3pmTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="16" class="row">
+      <div class="hour col-1 text-center">4 pm</div>
+      <section id="4pmTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+    <div id="17" class="row">
+      <div class="hour col-1 text-center">5 pm</div>
+      <section id="5pmTasks" class="time-block col-10 p-2"></section>
+      <button class="saveBtn col-1">Save</button>
+    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Develop/script.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./Develop/script.js"></script>
+</body>
+
 </html>
